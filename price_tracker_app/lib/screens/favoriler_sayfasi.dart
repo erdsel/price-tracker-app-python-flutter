@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/urun.dart';
 import '../services/api_service.dart';
-import 'urun_detay.dart';
+import 'urun_detay_modern.dart';
 
 class FavorilerSayfasi extends StatefulWidget {
   const FavorilerSayfasi({super.key});
@@ -131,7 +131,7 @@ class _FavorilerSayfasiState extends State<FavorilerSayfasi> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => UrunDetay(urunId: urun.id!),
+            builder: (context) => ModernUrunDetay(urunId: urun.id!),
           ),
         ).then((_) => favorileriYukle());
       },

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/urun.dart';
 import '../services/api_service.dart';
-import 'urun_detay.dart';
+import 'urun_detay_modern.dart';
 import 'favoriler_sayfasi.dart';
 
 class ResponsiveAnaSayfa extends StatefulWidget {
@@ -358,7 +358,7 @@ class _ResponsiveAnaSayfaState extends State<ResponsiveAnaSayfa> {
               ),
             ),
 
-            // İstatistik kartları - Yatay scroll
+            
       
 
             // Ürün listesi
@@ -568,7 +568,7 @@ class _ResponsiveAnaSayfaState extends State<ResponsiveAnaSayfa> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => UrunDetay(urunId: urun.id!),
+            builder: (context) => ModernUrunDetay(urunId: urun.id!),
           ),
         );
       },
