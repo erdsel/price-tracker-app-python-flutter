@@ -88,4 +88,39 @@ class ApiService {
       return false;
     }
   }
+
+  // Favori durumunu değiştir
+  static Future<bool> favoriToggle(int urunId) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/urun/$urunId/favori'),
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        return data['favori'] == 1;
+      }
+      return false;
+    } catch (e) {
+      print('API Hatası: $e');
+      return false;
+    }
+  }
+
+  // Favori ürünleri getir
+  static Future<List<Urun>> favorileriGetir() async {
+    try {
+      final response = await http.get(Uri.parse('$baseUrl/favoriler'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> jsonData = json.decode(response.body);
+        return jsonData.map((json) => Urun.fromJson(json)).toList();
+      } else {
+        throw Exception('Favoriler yüklenemedi');
+      }
+    } catch (e) {
+      print('API Hatası: $e');
+      throw Exception('Sunucuya bağlanılamadı');
+    }
+  }
 }

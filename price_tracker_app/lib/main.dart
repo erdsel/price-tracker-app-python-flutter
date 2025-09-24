@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/ana_sayfa.dart';
+import 'screens/ana_sayfa_responsive.dart';
 
 void main() {
   runApp(const FiyatTakipApp());
@@ -37,7 +37,7 @@ class FiyatTakipApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const AnaSayfa(),
+      home: const ResponsiveAnaSayfa(),
     );
   }
 }

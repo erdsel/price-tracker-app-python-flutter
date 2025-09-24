@@ -8,6 +8,7 @@ class Urun {
   final double? oncekiFiyat;
   final DateTime? sonKontrol;
   final bool aktif;
+  bool favori;
 
   Urun({
     this.id,
@@ -17,6 +18,7 @@ class Urun {
     this.oncekiFiyat,
     this.sonKontrol,
     this.aktif = true,
+    this.favori = false,
   });
 
   // JSON'dan Urun objesi oluştur
@@ -31,6 +33,7 @@ class Urun {
           ? DateTime.parse(json['son_kontrol'])
           : null,
       aktif: json['aktif'] == 1,
+      favori: (json['favori'] ?? 0) == 1,
     );
   }
 

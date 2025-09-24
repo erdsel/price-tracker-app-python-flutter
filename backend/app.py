@@ -44,7 +44,8 @@ def init_db():
             son_fiyat REAL,
             onceki_fiyat REAL,
             son_kontrol TIMESTAMP,
-            aktif INTEGER DEFAULT 1
+            aktif INTEGER DEFAULT 1,
+            favori INTEGER DEFAULT 0
         )
     ''')
 
@@ -296,6 +297,41 @@ def urun_sil(urun_id):
     conn.close()
 
     return jsonify({'basarili': True})
+
+@app.route('/api/urun/<int:urun_id>/favori', methods=['POST'])
+def favori_toggle(urun_id):
+    """Ürünü favorilere ekle/çıkar"""
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Mevcut favori durumunu al
+    cursor.execute('SELECT favori FROM urunler WHERE id = ?', (urun_id,))
+    result = cursor.fetchone()
+
+    if result:
+        current_favori = result['favori']
+        new_favori = 0 if current_favori else 1
+
+        # Favori durumunu güncelle
+        cursor.execute('UPDATE urunler SET favori = ? WHERE id = ?', (new_favori, urun_id))
+        conn.commit()
+        conn.close()
+
+        return jsonify({'basarili': True, 'favori': new_favori})
+
+    conn.close()
+    return jsonify({'hata': 'Ürün bulunamadı'}), 404
+
+@app.route('/api/favoriler', methods=['GET'])
+def favorileri_listele():
+    """Favori ürünleri listele"""
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM urunler WHERE aktif = 1 AND favori = 1 ORDER BY id DESC')
+    urunler = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    return jsonify(urunler)
 
 @app.route('/api/kontrol/baslat', methods=['POST'])
 def kontrol_baslat():
