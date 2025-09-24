@@ -9,6 +9,43 @@
 - Fiyat düşüşü bildirimleri
 - Fiyat geçmişi grafiği
 - Manuel fiyat kontrolü
+## 📸 Uygulamadan Ekran Görüntüleri
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="pages/adding_product_url.jpg" width="300" alt="Ürün URL ekleme sayfası" />
+      <br/>
+      <sub><b>Ürün URL Ekleme</b> — Takip etmek istediğiniz ürünün linkini yapıştırın.</sub>
+    </td>
+    <td align="center">
+      <img src="pages/adding_product_page.jpg" width="300" alt="Ürün eklendikten sonra sayfa" />
+      <br/>
+      <sub><b>Ürün Ekleme Sonrası</b> — Link doğrulanır, ürün özet bilgileri görünür.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="pages/favorite_page.jpg" width="300" alt="Favoriler sayfası" />
+      <br/>
+      <sub><b>Favoriler</b> — Sık takip edilen ürünleri tek ekranda toplayın.</sub>
+    </td>
+    <td align="center">
+      <img src="pages/product_details1.jpg" width="300" alt="Ürün detay sayfası 1" />
+      <br/>
+      <sub><b>Ürün Detayı (1)</b> — Güncel fiyat, son kontrol ve durum bilgileri.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="pages/product_details2.jpg" width="300" alt="Ürün detay sayfası 2" />
+      <br/>
+      <sub><b>Ürün Detayı (2)</b> — Fiyat geçmişi grafiği ve manuel kontrol.</sub>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## Kurulum
 
