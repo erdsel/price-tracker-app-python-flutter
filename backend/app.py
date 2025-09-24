@@ -15,14 +15,14 @@ import urllib3
 from improved_scraper import fiyat_bul_gelismis
 from site_scrapers import site_ozel_fiyat_bul
 
-# SSL sertifika doğrulaması uyarılarını kapat (öğrenci projesi için)
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Flask uygulamasını başlat
+
 app = Flask(__name__)
 CORS(app)  # Flutter'dan gelen istekleri kabul etmek için
 
-# Veritabanı bağlantısı oluştur
+# Veritabanı bağlantısı 
 def get_db():
     """SQLite veritabanına bağlan"""
     conn = sqlite3.connect('fiyat_takip.db')
@@ -118,7 +118,7 @@ def urun_fiyatini_kontrol_et(urun_id):
 
             conn.commit()
 
-            # Fiyat düştüyse bildirim gönder (ileride eklenecek)
+            # Fiyat düştüyse bildirim gönder later
             if onceki_fiyat and yeni_fiyat < onceki_fiyat:
                 print(f"FIYAT DÜŞTÜ! {urun['isim']}: {onceki_fiyat} TL -> {yeni_fiyat} TL")
 

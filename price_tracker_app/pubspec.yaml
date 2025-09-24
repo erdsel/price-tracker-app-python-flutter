@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   http: ^1.1.0  # HTTP istekleri için
   flutter_local_notifications: ^16.1.0  # Lokal bildirimler için
+  google_fonts: ^6.1.0  # Google Fonts için
 
 dev_dependencies:
   flutter_test:
