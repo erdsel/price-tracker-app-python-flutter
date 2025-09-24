@@ -1,6 +1,6 @@
 # Fiyat Takip Uygulaması
 
-Öğrenci projesi - Ürün fiyatlarını takip eden Flask + Flutter uygulaması
+- Ürün fiyatlarını takip eden Flask + Flutter uygulaması
 
 ## Özellikler
 
@@ -14,22 +14,22 @@
 
 ### Backend (Python Flask)
 
-1. Python bağımlılıklarını yükleyin:
+1. Python bağımlılıkları:
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
-2. Flask API'yi başlatın:
+2. Flask API'yi başlatma:
 ```bash
 python app.py
 ```
 
-API http://localhost:5000 adresinde çalışacak
+API http://localhost:5000 adresinde çalışacak.
 
-### Frontend (Flutter)
+### Mobil Tarafı (Flutter)
 
-1. Flutter bağımlılıklarını yükleyin:
+1. Flutter bağımlılıkları:
 ```bash
 cd price_tracker_app
 flutter pub get
@@ -58,5 +58,4 @@ flutter run
 ## Notlar
 
 - Emülatörde test ederken API URL'i: http://10.0.2.2:5000
-- Gerçek cihazda bilgisayarın IP adresini kullanın
-- Web scraping yaparken site kurallarına uyun
+- Gerçek cihazda bilgisayarın IP adresi
